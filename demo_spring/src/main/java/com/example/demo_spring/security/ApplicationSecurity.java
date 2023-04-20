@@ -4,5 +4,5 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 
 @EnableWebSecurity
 public class ApplicationSecurity extends WebSecurityConfigurerAdapter {
-    /* WebSecurityConfigurerAdapter is deprecated*/
+    /* WebSecurityConfigurerAdapter deprecated*/
 }
