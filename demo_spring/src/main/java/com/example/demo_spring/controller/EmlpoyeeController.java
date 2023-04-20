@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+
 
 @CrossOrigin("*")
 @RestController
@@ -30,11 +30,12 @@ public class EmlpoyeeController {
         return employeeRepo.save(employee);
     }
 
-    @GetMapping("{id}")//get employee by id
+     @GetMapping("{id}")//get employee by id
     public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id){
         Employee employee = employeeRepo.findById(id).orElseThrow(() -> new ResourceNotFoundException("The employee with the id: " + id + " does not exist"));
 
         return ResponseEntity.ok(employee);
+
     }
 
     @PutMapping("{id}")// update employee data
@@ -56,5 +57,7 @@ public class EmlpoyeeController {
         employeeRepo.delete(employee);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
+
 
 }
